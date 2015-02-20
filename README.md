@@ -38,6 +38,15 @@ Example F
 This example is identical to example E, the only difference is that I enhanced the tiny types to contain static
 factory methods.
 
+Example G
+When the feature we work on needs many helper services, not just validation, the usage of a non-anemic model such as in the previous example is probably
+not desirable, since the clients can be multiple. In this example, I am assuming that the EmailSender class from example C(where I used to pass a validator)
+has evolved so much in the dependencies it needs, that we have to redistribute logically those services.
+What we did is use parametrized constructors that allow custom implementations to exist, but also provide default implementations via a default constructor.
+If we follow the methods downstream, we will see how the services are designed to be as atomic as possible.
+The main idea of this approach is to redistribute the complexity by creating more meaningful groups of services.
+
+Example H
 
 
 

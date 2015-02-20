@@ -11,11 +11,12 @@ public class To {
 
     private List<String> to;
 
-    private To() {
+    private To(List<String> to) {
+        this.to = to;
     }
 
-    public static List<String> to(List<String> to) {
-        return validate(to);
+    public static To to(List<String> to) {
+        return new To(validate(to));
     }
 
     private static List<String> validate(List<String> value) {
